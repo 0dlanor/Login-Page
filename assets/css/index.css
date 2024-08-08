@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100&display=swap');
+
+:root{
+    --bgcolor: linear-gradient(0deg, #cc3057, #206fb9, #fff);
+
+    --cardLoginBg: #f6f6f7;
+    --greenCL: #fff;
+    --inputUserBg: #e0e0e0;
+    --inputUserFont: #fff;
+    --inputLabel: #c2c2c2de;
+    --btnLoginBg: #a0a0a0;
+
+    --menuButtonBg: #f6f6f7;
+    --menuButtonHover: #e4e4e4;
+    --chkInfoFont: #fff;
+    --switchBg: #a5a5a5;
+    --switchBefore: #fff;
+    --chkChecked: #575757;
+
+    --sideMenuWidth: 25%;
+    --sideMenuLeft: -25%;
+
+}
+
+[data-theme="light"]{
+    --bgcolor: linear-gradient(0deg, #cc3057, #206fb9, #fff);
+
+    --cardLoginBg: #f6f6f7;
+    --greenCL: #fff;
+    --inputUserBg: #e0e0e0;
+    --inputUserFont: #fff;
+    --inputLabel: #c2c2c2de;
+    --btnLoginBg: #a0a0a0;
+
+    --menuButtonBg: #f6f6f7;
+    --menuButtonHover: #e4e4e4;
+    --chkInfoFont: #fff;
+    --switchBg: #a5a5a5;
+    --switchBefore: #fff;
+    --chkChecked: #575757;
+
+    --sideMenuWidth: 25%;
+    --sideMenuLeft: -25%;
+}
+
+body{
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    background: var(--bgcolor)
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+header{
+    height: 45px;
+    padding: 0px 15px 0px 50px;
+    background-color: var(--cardLoginBg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box-user{
+    color: var(--btnLoginBg);
+    font-weight: bold;
+    font-size: 14pt;
+}
+.icon{
+    margin: 25px 0px;
+    width: 60px;
+}
+
+#branch{
+    margin: 23px 0px;
+    width: 45px;
+}
+
+#lamp{
+    margin: 19px 0px;
+    width: 45px;
+}
+
+.box-img{
+    width: 100vw;
+    height: 320px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.img-MS{
+    width: 50%;
+    height: auto;
+}
+
+.first-section{
+    color: rgb(0, 0, 0);
+    margin: 0;
+    width: 100%;
+}
+
+.second-section{
+    color: white;
+    margin:0 ;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.box-text{
+    color: var(--inputUserFont);
+    margin: 20px;
+    padding: 0px;
+    font-size: 14pt;
+    font-family: Arial;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+}
+
+.exit-button{
+    position: relative;
+    margin: none;
+    background: var(--btnLoginBg);
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    width: 75px;
+    height: 100%;
+    text-align: center;
+    font-weight: 800;
+    font-size: 80%;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--greenCL);
+    cursor: pointer;
+    transition: 0.2s;
+    
+}
+.exit-button:hover{
+    background: #cc3057;
+    color: var(--greenCL);
+}
+
+.menu-button{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 40px;
+    height: 40px;
+    border-radius: 0px 10px 10px 0px;
+    border: none;
+    outline: none;
+    background-color: var(--menuButtonBg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.menu-button:hover{
+    background-color: var(--menuButtonHover);
+}
+
+.menu-button > span{
+    width: 65%;
+    height: 3px;
+    margin: 2px 0px;
+    background-color: var(--inputLabel);
+}
+
+.sideMenu{
+    z-index: 1;
+    position: fixed;
+    top: 0px;
+    left: -25%;
+    width: 25%;
+    height: 100vh;
+    background-color: var(--cardLoginBg);
+    padding: 20px 20px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    transition: 0.3s;
+}
+
+.toggle-button{
+    position: relative;
+    background-color: var(--inputUserBg);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    padding: 0px 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.chk-info{
+    position: relative;
+    width: 100%;
+    left: 10px;
+    text-align: center;
+    color: var(--chkInfoFont);
+    pointer-events: none;
+}
+
+.chk{
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    appearance: none;
+    cursor: pointer;
+}
+
+.switch{
+    position: absolute;
+    background-color: var(--switchBg);
+    width: 40px;
+    height: 20px;
+    border-radius: 40px;
+    transition: 0.5s;
+    pointer-events: none;
+}
+.chk:checked ~ .switch{
+    background-color: var(--chkChecked);
+}
+
+.switch::before{
+    content: '';
+    width: 16px;
+    height: 16px;
+    top: 2px;
+    left: 3px;
+    background-color: var(--switchBefore);
+    border-radius: 15px;
+    position: absolute;
+    transition: 0.5s;
+}
+
+.chk:checked ~ .switch::before{
+    background-color: var(--menuButtonHover);
+    left: 18px;
+}

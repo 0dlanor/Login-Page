@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100&display=swap');
+
+:root{
+    --bgcolor: #271e3f;
+    
+    --greenLeftL: #77ffc0;
+
+    --cardLoginBg: #34275a;
+    --greenCL: #00ff88;
+    --inputUserBg: #443864;
+    --inputUserFont: #b6c0e2de;
+    --inputLabel: #baa6e2de;
+    --btnLoginBg: #4e388a;
+
+    --msgErrorBg: #9c4f4f;
+    --msgErrorFont: #e6c3c3de;
+
+    --inputUserErrorBg: #9c4f4f;
+    --inputUserValidBg: #296b4c;
+
+    --menuButtonBg: #34275a;
+    --menuButtonHover: #4e4075;
+    --chkInfoFont: #fff;
+    --switchBg: #584983;
+    --switchBefore: #fff;
+    --chkChecked: #00ff88;
+
+    --sideMenuWidth: 25%;
+    --sideMenuLeft: -25%;
+
+    #astronautRoxo{
+        display: none;
+    }
+
+    #astronautVerde{
+        display: block;
+    }
+}
+
+[data-theme="light"]{
+    --bgcolor: #ebebeb;
+    
+    --greenLeftL: #a3a3a3;
+
+    --cardLoginBg: #f6f6f7;
+    --greenCL: #8b8b8b;
+    --inputUserBg: #e0e0e0;
+    --inputUserFont: #646464;
+    --inputLabel: #979797de;
+    --btnLoginBg: #dbdbdb;
+
+    --menuButtonBg: #f6f6f7;
+    --menuButtonHover: #e4e4e4;
+    --chkInfoFont: #fff;
+    --switchBg: #a5a5a5;
+    --switchBefore: #fff;
+    --chkChecked: #575757;
+
+    --msgErrorBg: #e79090;
+    --msgErrorFont: #a34646;
+    
+    --inputUserErrorBg: #e79090;
+    --inputUserValidBg: #5ea785;
+
+    #astronautRoxo{
+        display: block;
+    }
+
+    #astronautVerde{
+        display: none;
+    }
+
+}
+
+* {
+    transition: background-color 0.3s;
+}
+
+body{
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    background: var(--bgcolor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+.left-login{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.left-login > h1{
+    color: var(--greenLeftL);
+}
+
+.left-login-image{
+    width: 35vw;
+}
+
+.menu-button{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 40px;
+    height: 40px;
+    border-radius: 0px 10px 10px 0px;
+    border: none;
+    outline: none;
+    background-color: var(--menuButtonBg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.menu-button:hover{
+    background-color: var(--menuButtonHover);
+}
+
+.menu-button > span{
+    width: 65%;
+    height: 3px;
+    margin: 2px 0px;
+    background-color: var(--inputLabel);
+}
+
+.sideMenu{
+    z-index: 1;
+    position: fixed;
+    top: 0px;
+    left: var(--sideMenuLeft);
+    width: var(--sideMenuWidth);
+    height: 100vh;
+    background-color: var(--cardLoginBg);
+    padding: 20px 20px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    transition: 0.3s;
+}
+
+.toggle-button{
+    position: relative;
+    background-color: var(--inputUserBg);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    padding: 0px 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.chk-info{
+    position: relative;
+    width: 80%;
+    left: 40px;
+    text-align: center;
+    color: var(--chkInfoFont);
+    pointer-events: none;
+}
+
+.chk{
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    appearance: none;
+    cursor: pointer;
+}
+
+.switch{
+    position: absolute;
+    background-color: var(--switchBg);
+    width: 40px;
+    height: 20px;
+    border-radius: 40px;
+    transition: 0.5s;
+    pointer-events: none;
+}
+.chk:checked ~ .switch{
+    background-color: var(--chkChecked);
+}
+
+.switch::before{
+    content: '';
+    width: 16px;
+    height: 16px;
+    top: 2px;
+    left: 3px;
+    background-color: var(--switchBefore);
+    border-radius: 15px;
+    position: absolute;
+    transition: 0.5s;
+}
+
+.chk:checked ~ .switch::before{
+    background-color: var(--menuButtonHover);
+    left: 18px;
+}
+
+.right-login{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;    
+}
+
+.card-login{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background: var(--cardLoginBg);
+    border-radius: 20px;
+    box-shadow: 0px 30px 40px #00000086;
+}
+
+.card-login > h1{
+    color: var(--greenCL);
+    font-weight: 800;
+    margin: 0;
+}
+
+.textField{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 30px 0px 5px 0px;
+    letter-spacing: 2px;
+}
+
+.inputUser{
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    color: var(--inputUserFont);
+    background: var(--inputUserBg);
+    font-size: 12pt;
+    letter-spacing: 2px;
+    box-shadow: 0px 30px 40px #00000056;
+    outline: none;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+.inputUser:focus{
+    scale: 1.03;
+}
+
+.inputLabel{
+    position: absolute;
+    top: 5px;
+    left: 0px;
+    color: var(--inputLabel);
+    margin-left: 10px;
+    pointer-events: none;
+    font-size: 16pt;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.inputUser:focus ~ .inputLabel,
+.inputUser:valid ~ .inputLabel{
+    top: -30px;
+    font-size: 13pt;
+}
+
+.btn-login{
+    width: 100%;
+    padding: 15px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--greenCL);
+    background: var(--btnLoginBg);
+    cursor: pointer;
+    transition: 0.2s;
+}
+.btn-login:hover{
+    color: var(--btnLoginBg);
+    background: var(--greenCL);
+}
+
+.signup{
+    color: var(--greenCL);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.signup > a{
+    color: var(--greenLeftL);
+    text-decoration: none;
+    margin-left: 8px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.signup > a:hover{
+    color: var(--inputUserFont);
+}
+
+.fa-eye{
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+    scale: 1.4;
+    color: var(--inputLabel);
+}
+
+#msgError{
+    text-align: center;
+    padding: 10px;
+    margin: 10px 0px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: var(--msgErrorFont);
+    background-color: var(--msgErrorBg);
+    border-radius: 6px;
+    display: none;
+}
+
+@media only screen and (max-width: 950px){
+    .card-login{
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 950px){
+
+    :root{
+        --sideMenuWidth: 50%;
+        --sideMenuLeft: -50%;
+    }
+
+    body{
+        flex-direction: column;
+    }
+
+    .sideMenu{
+        width: 50%;
+    }
+    
+    .left-login-image{
+        width: 50vw;
+    }
+
+    .left-login > h1{
+        display: none;
+    }
+
+    .left-login{
+        width: 100%;
+        height: auto;
+    }
+
+    .right-login{
+        width: 100%;
+        height: auto;
+    }
+
+    .card-login{
+        width: 90%;
+    }
+}

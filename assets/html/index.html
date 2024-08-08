@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Principal</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<header>
+    <div class="box-user">
+        <label id="username">Olá, </label>
+    </div>
+
+    <div class="box-actions">
+        <button class="exit-button" onclick="sair()">Sair</button>
+
+    </div>
+
+</header>
+
+<main>
+    <section class="first-section">
+        <div class="box-img">
+            <img class="img-MS" src="/assets/images/mundoSenai.png">
+        </div>
+    </section>
+
+    <section class="second-section">
+
+
+        <div class="box-text">
+            <img src="/assets/images/code-solid.svg" class="icon" id="code">
+            <h4>O Técnico em Desenvolvimento de Sistemas é um profissional apto a atuar no desenvolvimento de programas de computador, seguindo as especificações da lógica de programação e das linguagens de programação. Utiliza ambientes de desenvolvimentos de sistemas, sistemas operacionais e banco de dados.</h4>
+        </div>
+        <div class="box-text">
+            <img src="/assets/images/code-branch-solid.svg" class="icon" id="branch">
+            <h4>Tudo isso e mais um pouco será trabalhado no nosso curso de técnico em desenvolvimento de sistemas, o curso técnico em desenvolvimento de sistemas dura, no mínimo, um ano e meio. Ele prepara os alunos para os setores da tecnologias de informação e comunicação, como em sistemas distribuídos, jogos digitais e computação em nuvem.</h4>
+        </div>
+        <div class="box-text">
+            <img src="/assets/images/lightbulb-regular.svg" class="icon" id="lamp">
+            <h4>Uma ótima oportunidade para você iniciar sua carreira em alguma das diversas ramificações que a área da tecnologia possa propôr.'   </h4>
+        </div>
+    </section>
+</main>
+
+<body>
+
+    <div class="sideMenu">
+
+        <button class="menu-button" onclick="abrirMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="toggle-button">
+            <label for="checkbox" class="chk-info"> Tema Claro</label>
+            <input type="checkbox" name="checkbox" class="chk" id="tema-claro">
+            <label for="checkbox" class="switch"></label>
+        </div>
+    </div>
+
+</body>
+
+<script src="../js/index.js"></script>
+
+</html>

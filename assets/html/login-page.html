@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/login-page.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="sideMenu">
+
+        <button class="menu-button" onclick="abrirMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="toggle-button">
+            <label for="checkbox" class="chk-info"> Tema Claro</label>
+            <input type="checkbox" name="checkbox" class="chk" id="tema-claro">
+            <label for="checkbox" class="switch"></label>
+        </div>
+    </div>
+
+    <div class="left-login">
+
+        <h1>Faça o Login para acessar o site</h1>
+        <img src="../images/astronautVerde.svg" class="left-login-image" alt="Astronauta" id="astronautVerde">
+        <img src="../images/astronautRoxo.svg" class="left-login-image" alt="Astronauta" id="astronautRoxo">
+    </div>
+
+    <div class="right-login">
+
+        <div class="card-login">
+            <h1>Login</h1>
+            <div id="msgError"></div>
+
+            <div class="textField">
+                <input type="text" name="usuario" id="usuario" class="inputUser" required>
+                <label for="usuario" class="inputLabel">Usuário</label>
+            </div>
+            <div class="textField">
+                <input type="password" name="senha" id="senha" class="inputUser" required>
+                <label for="senha" class="inputLabel">Senha</label>
+                <i class="fa fa-eye" aria-hidden="true"></i>
+            </div>
+
+            <button class="btn-login" onclick="entrar()">Entrar</button>
+            <label class="signup">Não tem uma conta?<a href="../html/signup-page.html">Cadastre-se.</a></label>     <!-- href="../html/signup-page.html" -->
+        </div>
+    </div>
+</body>
+
+<script src="../js/login-page.js"></script>
+
+</html>
